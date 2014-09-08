@@ -10,6 +10,7 @@ class mysql {
   # Run mysql
   service { 'mysql':
     ensure  => running,
+    enable => true,
     require => Package['mysql-server'],
   }
 
@@ -18,6 +19,7 @@ class mysql {
     source  => 'puppet:///modules/mysql/my.cnf',
     require => Package['mysql-server'],
     notify  => Service['mysql'],
+    mode => 644,
   }
 
   # We set the root password here
