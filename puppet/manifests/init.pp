@@ -10,8 +10,9 @@ file { '/var/www/':
   ensure => 'directory',
 }
 
-include apt
-
+class { 'apt':
+    always_apt_update => true,
+}
 apt::ppa { 'ppa:nginx/stable': }
 
 include nginx, php, mysql
