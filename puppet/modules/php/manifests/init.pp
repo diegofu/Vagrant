@@ -16,5 +16,13 @@ class php {
         ensure => running,
         require => Package['php5-fpm'],
     }
+
+    # Use a custom mysql configuration file
+	file { '/etc/mysql/my.cnf':
+		source  => 'puppet:///modules/mysql/my.cnf',
+		require => Package['mysql-server'],
+		notify  => Service['mysql'],
+		mode => 644,
+	}
     
 }
