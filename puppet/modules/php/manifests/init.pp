@@ -5,8 +5,11 @@ class php {
     apt::ppa { 'ppa:ondrej/php5': }
 
     # Install the php5-fpm and php5-cli packages
-    package { ['php5-fpm',
-            'php5-cli']:
+    package { [
+        'php5-fpm',
+        'php5-cli',
+        'php5-gd'
+    ]:
         ensure => present,
         require => Apt::Ppa['ppa:ondrej/php5'],
     }
