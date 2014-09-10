@@ -18,10 +18,9 @@ class php {
     }
 
     # Use a custom mysql configuration file
-	file { '/etc/mysql/my.cnf':
-		source  => 'puppet:///modules/mysql/my.cnf',
-		require => Package['mysql-server'],
-		notify  => Service['mysql'],
+	file { '/etc/php5/fpm/pool.d/www.conf':
+		source  => 'puppet:///modules/php/www.conf',
+		require => Package['php5-fpm'],
 		mode => 644,
 	}
     

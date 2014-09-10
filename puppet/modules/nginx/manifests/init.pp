@@ -8,7 +8,7 @@ class nginx {
     # host /path/to/vagrant/app on our system
     file { '/var/www/app':
         ensure  => 'link',
-        target  => '/vagrant/app',
+        target  => '/vagrant/yii_basic/web',
     }
 
     # Install the nginx package. This relies on apt-get update
