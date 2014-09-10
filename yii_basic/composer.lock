@@ -628,18 +628,12 @@
             "time": "2014-04-13 21:58:59"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "beta",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
