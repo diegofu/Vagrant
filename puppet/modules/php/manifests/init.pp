@@ -1,7 +1,7 @@
 # vagrant/puppet/modules/php/manifests/init.pp
 class php {
 
-    # Add repo for php 5.6.0
+    # Add repo for php 5.5.0
     apt::ppa { 'ppa:ondrej/php5': }
 
     # Install the php5-fpm and php5-cli packages
@@ -25,6 +25,7 @@ class php {
 		source  => 'puppet:///modules/php/www.conf',
 		require => Package['php5-fpm'],
 		mode => 644,
+        notify => Service['php5-fpm']
 	}
     
 }
