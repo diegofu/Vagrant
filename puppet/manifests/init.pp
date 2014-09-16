@@ -32,7 +32,7 @@ php::module {'gd':}
 
 # Use a custom www.conf configuration file
 file { '/etc/php5/fpm/pool.d/www.conf':
-    source  => 'puppet:///modules/php/www.conf',
+    source  => 'puppet:///modules/files/php/www.conf',
     require => Package['php5-fpm'],
     mode => 644,
     # notify => Service['php5-fpm']
@@ -40,7 +40,7 @@ file { '/etc/php5/fpm/pool.d/www.conf':
 
 # Use a custom www.conf configuration file
 file { '/etc/php5/fpm/php.ini':
-    source  => 'puppet:///modules/php/php.ini',
+    source  => 'puppet:///modules/files/php/php.ini',
     require => Package['php5-fpm'],
     mode => 644,
     # notify => Service['php5-fpm']
