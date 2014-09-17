@@ -14,7 +14,9 @@ class { 'apt':
     always_apt_update => true,
 }
 
-class { 'nginx': }
+class { 'nginx':
+mail => true,
+}
 
 apt::ppa { 'ppa:ondrej/php5': }
 
@@ -29,6 +31,7 @@ php::module {'fpm':}
 php::module {'mysql':}
 php::module {'xdebug':}
 php::module {'gd':}
+php::module {'mcrypt':}
 
 # Use a custom www.conf configuration file
 file { '/etc/php5/fpm/pool.d/www.conf':
